@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: orange;
+  padding: 10px;
+  color: white;
+}
+
+.logo-container {
+  margin-right: 20px;
+}
+
+.logo {
+  max-width: 50px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icon {
+  width: 30px;
+  margin-left: 10px;
+}
