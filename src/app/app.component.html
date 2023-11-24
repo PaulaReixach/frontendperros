@@ -1,3 +1,33 @@
+<!-- Para mostrar la conexion establecida  -->
+<div *ngIf="elasticsearchInfo">
+  <p>Connection to Elasticsearch established!</p>
+</div>
+
+<div *ngIf="searchData.length > 0">
+  <h2>Search Results:</h2>
+  <ul>
+    <li *ngFor="let result of searchData">
+      <p>Name: {{ result.name }}</p>
+      <p>Description: {{ result.description }}</p>
+      <p>Price: {{ result.price }}</p>
+    </li>
+  </ul>
+</div>
+
+<!-- Para mostrar el item buscado -->
+
+<div *ngIf="searchData">
+  <h2>Search Results</h2>
+  <ul>
+    <li *ngFor="let result of searchData">
+      <strong>Name:</strong> {{ result.name }}<br>
+      <strong>Description:</strong> {{ result.description }}<br>
+      <strong>Price:</strong> {{ result.price }}<br>
+      <hr>
+    </li>
+  </ul>
+</div>
+
 
 <style>
   :host {
@@ -455,4 +485,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
 
