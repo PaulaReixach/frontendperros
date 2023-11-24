@@ -1,8 +1,15 @@
 # Frontendperros
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+## Connexió BACKEND - FRONTEND
+Per a cada Query s'haurà d'utilitzar /api/... 
+Per exemple: /api/search     /api/delete .... 
+
+He ajuntat lo que teniem de base + la conexió + la recerca d'una 'Apple'. 
+
 
 ## Development server
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
