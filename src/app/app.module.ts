@@ -8,20 +8,24 @@ import { LogoComponent } from './logo/logo.component';
 import { AppRoutingModule } from './app-routing.module';
 
 
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    NavigationComponent,
-    LogoComponent
-  ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        NavigationComponent,
+        LogoComponent,
+    ],
+    imports: [
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+    ],
+    providers: [],
+    exports: [
+        NavigationComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
 

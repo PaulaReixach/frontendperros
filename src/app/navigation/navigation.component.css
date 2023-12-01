@@ -1,26 +1,17 @@
 /* navigation.component.css */
 .navigation {
-  display: flex;
   flex-direction: column; /* Cambiado a columna para apilar los elementos verticalmente */
   justify-content: space-between; /* Ajustado para espacio entre los elementos */
   align-items: center;
   padding: 10px;
   background-color: #ffc16d;
   color: white;
-  position: relative;
-}
-
-.logo-and-search {
-  display: flex;
-  align-items: center;
-}
-
-input, button {
-  margin-top: 10px;
+  width: 100%;
 }
 
 .menu-container {
   position: relative;
+  width: 100%;
 }
 
 .overlay {
