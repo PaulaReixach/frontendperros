@@ -1,3 +1,11 @@
+
 <header>
   <app-navigation></app-navigation>
+  <div style="display: flex; flex-direction: column; align-items: center; width: 100%; margin-left: 20px; margin-right: 10px;">
+    <div style="display: flex; align-items: center; width: 100%;">
+      <input type="text" placeholder="Buscar" style="flex-grow: 1; height: 4vh; border-radius: 20px; margin-left: 10px; margin-right: 10px;" (keypress)="buscarPorTecla($event)">
+      <img src="assets/lupa.png" alt="Buscar" style="height: 4vh; cursor: pointer;" (click)="buscarPorClic()">
+    </div>
+    <p id="resultado"></p>
+  </div>
 </header>
