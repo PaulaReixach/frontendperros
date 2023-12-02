@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import { MatChipsModule } from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +13,9 @@ export class HeaderComponent {
   buscarPorTecla(event: KeyboardEvent) {
     if (event.key === 'Enter') {
       const inputElement = event.target as HTMLInputElement;
-      const terminoDeBusqueda = inputElement.value;
-      this.terminosDeBusqueda.push(terminoDeBusqueda);
-      const resultadoElement = document.getElementById('resultado');
-      if (resultadoElement) {
-        resultadoElement.textContent = 'Has escrito: ' + this.terminosDeBusqueda.join(', '); // Muestra los términos de búsqueda en la pantalla
+      const terminoDeBusqueda = inputElement.value.trim();
+      if (terminoDeBusqueda !== '') {
+        this.terminosDeBusqueda.push(terminoDeBusqueda);
       }
       inputElement.value = ''; // Limpia el campo de búsqueda
     }
@@ -25,14 +23,19 @@ export class HeaderComponent {
 
   buscarPorClic() {
     const inputElement = document.querySelector('input[placeholder="Buscar"]') as HTMLInputElement;
-    const terminoDeBusqueda = inputElement.value;
-    this.terminosDeBusqueda.push(terminoDeBusqueda);
-    const resultadoElement = document.getElementById('resultado');
-    if (resultadoElement) {
-      resultadoElement.textContent = 'Has escrito: ' + this.terminosDeBusqueda.join(', '); // Muestra los términos de búsqueda en la pantalla
+    const terminoDeBusqueda = inputElement.value.trim();
+    if (terminoDeBusqueda !== '') {
+      this.terminosDeBusqueda.push(terminoDeBusqueda);
     }
     inputElement.value = ''; // Limpia el campo de búsqueda
   }
 
+  eliminarTerminoDeBusqueda(terminoDeBusqueda: string) {
+    const index = this.terminosDeBusqueda.indexOf(terminoDeBusqueda);
+
+    if (index >= 0) {
+      this.terminosDeBusqueda.splice(index, 1);
+    }
+  }
 
 }

@@ -5,6 +5,11 @@ header {
   padding: 10px;
   background-color: #ff8900;
   color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4); /* Agrega sombra */
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+  background-color: #895112;
 }
 
 
