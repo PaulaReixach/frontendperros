@@ -6,6 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LogoComponent } from './logo/logo.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatChipsModule } from '@angular/material/chips';
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -16,11 +19,14 @@ import { AppRoutingModule } from './app-routing.module';
         NavigationComponent,
         LogoComponent,
     ],
-    imports: [
-        HttpClientModule,
-        BrowserModule,
-        AppRoutingModule,
-    ],
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatChipsModule,
+    MatIconModule,
+  ],
     providers: [],
     exports: [
         NavigationComponent
