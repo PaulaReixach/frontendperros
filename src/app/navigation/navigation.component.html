@@ -1,0 +1,14 @@
+<div class="navigation">
+  <div class="logo-and-search" style="display: flex;">
+    <app-logo></app-logo>
+  </div>
+  <div class="menu-container">
+    <button (click)="toggleDropdown()">Menú</button>
+    <div [style.visibility]="dropdownOpen ? 'visible' : 'hidden'" class="overlay" (click)="closeMenu()"></div>
+    <div class="dropdown-content" [ngClass]="{'active': dropdownOpen}">
+      <!-- Contenido del menú desplegable -->
+      <img src="assets/cruz.png" alt="Cerrar" (click)="closeMenu()" style="cursor:pointer;">
+      <!-- Puedes agregar aquí el contenido del menú desplegable -->
+    </div>
+  </div>
+</div>

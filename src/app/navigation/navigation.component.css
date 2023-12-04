@@ -1,0 +1,69 @@
+/* navigation.component.css */
+.navigation {
+  flex-direction: column; /* Cambiado a columna para apilar los elementos verticalmente */
+  justify-content: space-between; /* Ajustado para espacio entre los elementos */
+  align-items: center;
+  padding: 10px;
+  background-color: #ffc16d;
+  color: white;
+  width: 100%;
+}
+
+.menu-container {
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Color oscuro y semitransparente */
+  z-index: 1; /* Asegurarse de que el fondo oscuro esté detrás del menú */
+}
+
+.overlay.active {
+  background-color: rgba(0, 0, 0, 0.2); /* Color oscuro y semitransparente cuando está activo */
+}
+
+.dropdown-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15%;
+  background-color: #ffc16d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos al inicio del eje transversal */
+  padding-top: 10px;
+  z-index: 2; /* Asegurarse de que el menú esté encima del fondo oscuro */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5); /* Agrega sombra */
+  transform: translateX(-100%); /* Inicialmente a la izquierda */
+  transition: transform 0.3s ease-out, visibility 0.3s ease-out, opacity 0.3s ease-out; /* Agrega transición para suavizar el movimiento, la visibilidad y la opacidad */
+  visibility: hidden; /* Inicialmente invisible */
+  opacity: 0; /* Inicialmente transparente */
+}
+
+.dropdown-content.active {
+  transform: translateX(0); /* Mueve el menú a la derecha cuando está activo */
+  visibility: visible; /* Visible cuando está activo */
+  opacity: 1; /* Opaco cuando está activo */
+}
+
+.dropdown-content img { /* Cruz que se encuentra dentro del desplegable */
+  width: 30px; /* Ajusta el ancho de la imagen */
+  height: 30px; /* Ajusta la altura de la imagen */
+  margin: 10px; /* Añade margen alrededor de la imagen */
+  opacity: 70%;
+}
+
+
+
+
+
+
+
