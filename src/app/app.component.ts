@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() { //Para el inicio de la app, hay un search de 'apple' y probar si hay conex, cambiar a lo q queramos
     this.checkConnection();
-    this.search('Apple');
+    this.search('Tobi');
   }
 
   checkConnection() { //Comprobacion de k hay conexión
@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
       (data) => {
         this.elasticsearchInfo = data;
         console.log('Connection to Elasticsearch established:', this.elasticsearchInfo);
+        console.log('Raw data from Elasticsearch:', data); // Agrega esta línea para imprimir los datos brutos
       },
       (error) => {
         console.error('Error connecting to Elasticsearch:', error);
