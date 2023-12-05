@@ -26,7 +26,7 @@ describe('ElasticsearchService', () => {
   });
 
   it('should retrieve information from Elasticsearch', () => {
-    const mockResponse = { /* mock response data */ };
+    const mockResponse = {/* mock response data */ };
 
     service.getInfo().subscribe((data) => {
       expect(data).toEqual(mockResponse);
@@ -39,7 +39,7 @@ describe('ElasticsearchService', () => {
   });
 
   it('should perform a search in Elasticsearch', () => {
-    const query = 'example';
+    const query = 'Orange';
     const mockResponse = { /* mock response data */ };
 
     service.search(query).subscribe((data) => {

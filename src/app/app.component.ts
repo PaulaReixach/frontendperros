@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() { //Para el inicio de la app, hay un search de 'apple' y probar si hay conex, cambiar a lo q queramos
     this.checkConnection();
-    this.search('Tobi');
+    this.search('Toby');
   }
 
   checkConnection() { //Comprobacion de k hay conexión

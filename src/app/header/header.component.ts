@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
+import {AppComponent} from "../app.component";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,11 @@ import { MatChipsModule } from '@angular/material/chips';
 export class HeaderComponent {
   terminosDeBusqueda: string[] = [];
 
+  //constructor(private elasticsearchService: ElasticsearchService) {}
 
+  constructor(
+    private appComponent: AppComponent
+  ) {}
   buscarPorTecla(event: KeyboardEvent) {
     if (event.key === 'Enter') {
       const inputElement = event.target as HTMLInputElement;
@@ -26,6 +31,11 @@ export class HeaderComponent {
     const terminoDeBusqueda = inputElement.value.trim();
     if (terminoDeBusqueda !== '') {
       this.terminosDeBusqueda.push(terminoDeBusqueda);
+    }
+    if (this.terminosDeBusqueda.length > 0){
+      for (const term of this.terminosDeBusqueda) {
+        this.appComponent.search(term);
+      }
     }
     inputElement.value = ''; // Limpia el campo de búsqueda
   }
