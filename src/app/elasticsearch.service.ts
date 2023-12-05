@@ -16,10 +16,12 @@ export class ElasticsearchService {
   getInfo(): Observable<any> {
     // Cambia de GET a POST
     return this.http.post<any>(`${this.apiUrl}/check`, {});
+    //return this.http.get<any>(`http://localhost:3000/check`);
   }
 
   //Query para obtener un objeto /api/search+item (está en el back también)
   search(query: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/search?query=${query}`);
+    //return this.http.get<any>(`http://localhost:3000/search?query=${query}`);
   }
 }

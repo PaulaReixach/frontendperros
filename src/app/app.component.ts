@@ -13,11 +13,14 @@ export class AppComponent implements OnInit {
   elasticsearchInfo: any;
   searchData: any[] = [];
 
-  constructor(private elasticsearchService: ElasticsearchService) {}
+  //constructor(private elasticsearchService: ElasticsearchService) {}
 
+  constructor(
+    private elasticsearchService: ElasticsearchService,
+  ) {}
   ngOnInit() { //Para el inicio de la app, hay un search de 'apple' y probar si hay conex, cambiar a lo q queramos
     this.checkConnection();
-    this.search('Apple');
+    //this.search('Orange');
   }
 
   checkConnection() { //Comprobacion de k hay conexión
