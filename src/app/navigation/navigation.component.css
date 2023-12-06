@@ -46,6 +46,8 @@
   transition: transform 0.3s ease-out, visibility 0.3s ease-out, opacity 0.3s ease-out; /* Agrega transición para suavizar el movimiento, la visibilidad y la opacidad */
   visibility: hidden; /* Inicialmente invisible */
   opacity: 0; /* Inicialmente transparente */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .dropdown-content.active {
@@ -61,6 +63,43 @@
   opacity: 70%;
 }
 
+.buttonSel {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #ffc16d;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.buttonSel.selected {
+  background-color: #ffc16d;
+}
+
+.buttonSel span {
+  margin-right: 10px;
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botones-adicionales {
+  display: none;
+  flex-direction: column;
+  margin-left: 20px;
+  max-width: 200px;
+}
 
 
 

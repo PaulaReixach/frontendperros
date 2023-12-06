@@ -9,6 +9,111 @@
       <!-- Contenido del menú desplegable -->
       <img src="assets/cruz.png" alt="Cerrar" (click)="closeMenu()" style="cursor:pointer;">
       <!-- Puedes agregar aquí el contenido del menú desplegable -->
+
+      <!-- ANIMAL -->
+      <button class="buttonSel" (click) = "toggleButtons('Animal')" id="AnimalB">Animal +</button>
+        <div class="botones-adicionales" id="Animal">
+            <button class="buttonSel" (click)="selectInfo('animal','Gos')" id="gos"> Gos <span> </span> </button>
+            <button class="buttonSel" (click)="selectInfo('animal','Gat')" id="gat"> Gat <span> </span> </button>
+            <button class="buttonSel" (click)="selectInfo('animal','Ocell')" id="ocell"> Ocell <span> </span> </button>
+            <button class="buttonSel" (click)="selectInfo('animal','Conill')" id="conill"> Conill <span> </span> </button>
+        </div>
+      <!-- ANIMAL -->
+
+      <!-- PELATGE -->
+      <button class="buttonSel" (click) = "toggleButtons('Pelatge')" id="PelatgeB">Pelatge +</button>
+      <div class="botones-adicionales" id="Pelatge">
+        <button class="buttonSel" (click)="selectInfo('pelatge','Sense')" id="sense"> Sense <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('pelatge','Curt')" id="curt"> Curt <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('pelatge','Mig')" id="mig"> Mig <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('pelatge','Llarg')" id="llarg"> Llarg <span> </span> </button>
+      </div>
+      <!-- PELATGE -->
+
+      <!-- COLOR -->
+      <button class="buttonSel" (click) = "toggleButtons('Color')" id="ColorB">Color +</button>
+      <div class="botones-adicionales" id="Color">
+        <button class="buttonSel" (click)="selectInfo('color','Negre')" id="negre"> Negre <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('color','Gris')" id="gris"> Gris <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('color','Blanc')" id="blanc"> Blanc <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('color','Vermell')" id="vermell"> Vermell <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('color','Ros')" id="ros"> Ros <span> </span> </button>
+      </div>
+      <!-- COLOR -->
+
+      <!-- RAÇA -->
+      <button class="buttonSel" (click) = "toggleButtons('Raca')" id="RacaB">Raça +</button>
+      <div class="botones-adicionales" id="Raca">
+        <div id="GosA" style="display: none; flex-direction: column;">
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Beagle','gos')" id="beagle"> Beagle <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Bulldog','gos')" id="bulldog"> Bulldog <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Labrador','gos')" id="labrador"> Labrador <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Golden','gos')" id="golden"> Golden <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Pug','gos')" id="pug"> Pug <span> </span> </button>
+        </div>
+
+        <div id="GatA" style="display: none; flex-direction: column;">
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Persa','gat')" id="persa"> Persa <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Siberia','gat')" id="siberia"> Siberia <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Esfinx','gat')" id="esfinx"> Esfinx <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Somali','gat')" id="somali"> Somali <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Himalai','gat')" id="himalai"> Himalai <span> </span> </button>
+        </div>
+
+        <div id="OcellA" style="display: none; flex-direction: column;">
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Tuca','ocell')" id="tuca"> Tuca <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Lloro','ocell')" id="lloro"> Lloro <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Canari','ocell')" id="canari"> Canari <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Gorrio','ocell')" id="gorrio"> Gorrio <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Anec', 'ocell')" id="anex"> Anec <span> </span> </button>
+        </div>
+
+        <div id="ConillA" style="display: none; flex-direction: column;">
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Rex', 'conill')" id="rex"> Rex <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Belier', 'conill')" id="belier"> Belier <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Toy', 'conill')" id="toy"> Toy <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Papallona', 'conill')" id="papallona"> Papallona <span> </span> </button>
+          <button class="buttonSel" (click)="selectInfoRaca('raca','Tan', 'conill')" id="tan"> Tan <span> </span> </button>
+        </div>
+      </div>
+      <!-- RAÇA -->
+
+      <!-- ENFERMETAT -->
+      <button class="buttonSel" (click) = "toggleButtons('Enfermetat')" id="EnfermetatB">Enfermetat +</button>
+      <div class="botones-adicionales" id="Enfermetat">
+        <button class="buttonSel" (click)="selectInfo('enfermetat','Artitris')" id="artitris"> Artitris <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('enfermetat','Ceguera')" id="ceguera"> Ceguera <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('enfermetat','Diabetis')" id="diabetis"> Diabetis <span> </span> </button>
+      </div>
+      <!-- ENFERMETAT -->
+
+      <!-- TAMANY -->
+      <button class="buttonSel" (click) = "toggleButtons('Tamany')" id="TamanyB">Tamany +</button>
+      <div class="botones-adicionales" id="Tamany">
+        <button class="buttonSel" (click)="selectInfo('tamany','Petit')" id="petit"> Petit <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('tamany','Mitja')" id="mitja"> Mitja <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('tamany','Gran')" id="gran"> Gran <span> </span> </button>
+      </div>
+      <!-- TAMANY -->
+
+      <!-- EDAT -->
+      <button class="buttonSel" (click) = "toggleButtons('Edat')" id="EdatB">Edat +</button>
+      <div class="botones-adicionales" id="Edat">
+        <button class="buttonSel" (click)="selectInfo('edat','0-2')" id="0-2"> 0-2 <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('edat','2-5')" id="2-5"> 2-5 <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('edat','5-8')" id="5-8"> 5-8 <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('edat','+8')" id="+8"> +8 <span> </span> </button>
+      </div>
+      <!-- EDAT -->
+
+      <p style="color: black;">SELECIONADO: </p>
+      <p style="color: black;">  animal: {{infoValue['animal'].join(', ') }}</p>
+      <p style="color: black;">  pelatge: {{infoValue['pelatge'].join(', ') }}</p>
+      <p style="color: black;">  raça: {{infoValue['raca'].join(', ') }}</p>
+      <p style="color: black;">  raça: {{infoValue['racagos'].join(', ') }}</p>
+      <p style="color: black;">  enfermetat: {{infoValue['enfermetat'].join(', ') }}</p>
+      <p style="color: black;">  tamany: {{infoValue['tamany'].join(', ') }}</p>
+      <p style="color: black;">  edat: {{infoValue['edat'].join(', ') }}</p>
     </div>
   </div>
 </div>
