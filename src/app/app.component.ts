@@ -1,5 +1,3 @@
-// app.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { ElasticsearchService } from './elasticsearch.service';
 
@@ -17,7 +15,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() { //Para el inicio de la app, hay un search de 'apple' y probar si hay conex, cambiar a lo q queramos
     this.checkConnection();
-    this.search('Toby');
+    this.search('Apple');
   }
 
   checkConnection() { //Comprobacion de k hay conexión
@@ -44,5 +42,13 @@ export class AppComponent implements OnInit {
         console.error('Error searching in Elasticsearch:', error);
       }
     );
+  }
+
+  eliminarResultadosDeBusqueda(terminoDeBusqueda: string){
+    this.searchData = this.searchData.filter(result => result.name !== terminoDeBusqueda);
+  }
+
+  clearSearchResults(){
+    this.searchData = [];
   }
 }
