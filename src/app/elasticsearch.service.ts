@@ -24,4 +24,11 @@ export class ElasticsearchService {
     return this.http.get<any>(`${this.apiUrl}/search?query=${query}`);
     //return this.http.get<any>(`http://localhost:3000/search?query=${query}`);
   }
+
+  searchButton(query: string[][]): Observable<any> {
+    const formattedArray = query.map(row => row.join(',')).join('|');
+
+    return this.http.get<any>(`${this.apiUrl}/searchButton?query=${formattedArray}`);
+    //return this.http.get<any>(`http://localhost:3000/search?query=${query}`);
+  }
 }

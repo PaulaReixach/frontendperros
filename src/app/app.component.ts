@@ -44,6 +44,20 @@ export class AppComponent implements OnInit {
     );
   }
 
+
+  searchButton(animals: string[][]) {
+    this.elasticsearchService.searchButton(animals).subscribe(
+      (data: any) => {
+        this.searchData = data;
+        console.log('Data from Elasticsearch:', this.searchData);
+      },
+      (error) => {
+        console.error('Error searching in Elasticsearch:', error);
+      }
+    );
+  }
+
+
   eliminarResultadosDeBusqueda(terminoDeBusqueda: string){
     this.searchData = this.searchData.filter(result => result.name !== terminoDeBusqueda);
   }
@@ -51,4 +65,5 @@ export class AppComponent implements OnInit {
   clearSearchResults(){
     this.searchData = [];
   }
+
 }

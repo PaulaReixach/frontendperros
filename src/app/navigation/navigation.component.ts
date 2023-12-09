@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import {AppComponent} from "../app.component";
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class NavigationComponent {
   @Input() dropdownOpen: boolean = false;
+  constructor( private appComponent: AppComponent) {}
 
   //TABLAS
   infoValue: { [key: string]: Array<string>} = {
@@ -81,6 +83,7 @@ export class NavigationComponent {
 
 
   selectInfo(type: string, value: string) {
+    let id = '';
     if(type === 'animal'){
       const nom = value + "A";
       const vari = "raca" + value.toLowerCase();
@@ -99,7 +102,14 @@ export class NavigationComponent {
         }
       }
     }
-    const botonSeleccionado = document.getElementById(value.toLowerCase());
+
+    if(type === 'pelatge' && value === 'Mitja'){
+      id = 'mig';
+    } else {
+      id = value.toLowerCase();
+    }
+
+    const botonSeleccionado = document.getElementById(id);
 
     if (botonSeleccionado) {
       // Alternar la clase 'selected' en el botón
@@ -111,8 +121,7 @@ export class NavigationComponent {
           valSel.innerHTML = '&#10008;'; // Poner la cruz
           this.infoValue[type].push(value);
         } else {
-          valSel.innerHTML = ''; // Vaciar el contenido
-          // Quitar la mascota de la array
+          valSel.innerHTML = '';
           const index = this.infoValue[type].indexOf(value);
           if (index !== -1) {
             this.infoValue[type].splice(index, 1);
@@ -152,5 +161,11 @@ export class NavigationComponent {
         }
       }
     }
+  }
+  filtrar() {
+    const animales: string[][] = [this.infoValue['animal'], this.infoValue['raca'], this.infoValue['color'], this.infoValue['enfermetat'],
+      this.infoValue['pelatge'], this.infoValue['tamany'], this.infoValue['edat']];
+    console.log(animales);
+    this.appComponent.searchButton(animales);
   }
 }

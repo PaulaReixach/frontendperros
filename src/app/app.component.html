@@ -1,10 +1,13 @@
 <app-header></app-header>
 
 
- Para mostrar la conexion establecida
+
+ <!--Para mostrar la conexion establecida-->
+
 <div *ngIf="elasticsearchInfo">
   <p>Connection to Elasticsearch established!</p>
 </div>
+
 
 <div *ngIf="searchData">
   <h2>Resultados de la búsqueda:</h2>
