@@ -3,7 +3,9 @@
     <app-logo></app-logo>
   </div>
   <div class="menu-container">
-    <button (click)="toggleDropdown()">Menú</button>
+    <button (click)="toggleDropdown()" style="position: relative;">
+      <img src="assets/raya.png" alt="Menú" style="position: relative; top: 2px; opacity: 0.5; width: 20px; height: 20px;">
+    </button>
     <div [style.visibility]="dropdownOpen ? 'visible' : 'hidden'" class="overlay" (click)="closeMenu()"></div>
     <div class="dropdown-content" [ngClass]="{'active': dropdownOpen}">
       <!-- Contenido del menú desplegable -->
@@ -104,17 +106,6 @@
         <button class="buttonSel" (click)="selectInfo('edat','5-8')" id="5-8"> 5-8 <span> </span> </button>
         <button class="buttonSel" (click)="selectInfo('edat','+8')" id="+8"> +8 <span> </span> </button>
       </div>
-      <!-- EDAT -->
-
-      <p>SELECCIONAT:</p>
-      <p>Animal: {{ infoValue['animal'].join(', ') }}</p>
-      <p>Pelatge: {{ infoValue['pelatge'].join(', ') }}</p>
-      <p>Color: {{ infoValue['color'].join(', ') }}</p>
-      <p>Raca: {{ infoValue['raca'].join(', ') }}</p>
-      <p>Enfermetat: {{ infoValue['enfermetat'].join(', ') }}</p>
-      <p>Tamany: {{ infoValue['tamany'].join(', ') }}</p>
-      <p>Edat: {{ infoValue['edat'].join(', ') }}</p>
-
 
       <button class="buttonSel" (click) = "filtrar()" style="background-color: white"> FILTRAR </button>
     </div>
