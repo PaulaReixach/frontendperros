@@ -1,5 +1,3 @@
-// app.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { ElasticsearchService } from './elasticsearch.service';
 
@@ -46,6 +44,7 @@ export class AppComponent implements OnInit {
     );
   }
 
+
   searchButton(animals: string[][]) {
     this.elasticsearchService.searchButton(animals).subscribe(
       (data: any) => {
@@ -56,6 +55,15 @@ export class AppComponent implements OnInit {
         console.error('Error searching in Elasticsearch:', error);
       }
     );
+  }
+
+
+  eliminarResultadosDeBusqueda(terminoDeBusqueda: string){
+    this.searchData = this.searchData.filter(result => result.name !== terminoDeBusqueda);
+  }
+
+  clearSearchResults(){
+    this.searchData = [];
   }
 
 }
