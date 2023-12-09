@@ -25,7 +25,7 @@
       <div class="botones-adicionales" id="Pelatge">
         <button class="buttonSel" (click)="selectInfo('pelatge','Sense')" id="sense"> Sense <span> </span> </button>
         <button class="buttonSel" (click)="selectInfo('pelatge','Curt')" id="curt"> Curt <span> </span> </button>
-        <button class="buttonSel" (click)="selectInfo('pelatge','Mig')" id="mig"> Mig <span> </span> </button>
+        <button class="buttonSel" (click)="selectInfo('pelatge','Mitja')" id="mig"> Mitja <span> </span> </button>
         <button class="buttonSel" (click)="selectInfo('pelatge','Llarg')" id="llarg"> Llarg <span> </span> </button>
       </div>
       <!-- PELATGE -->
@@ -106,14 +106,17 @@
       </div>
       <!-- EDAT -->
 
-      <p style="color: black;">SELECIONADO: </p>
-      <p style="color: black;">  animal: {{infoValue['animal'].join(', ') }}</p>
-      <p style="color: black;">  pelatge: {{infoValue['pelatge'].join(', ') }}</p>
-      <p style="color: black;">  raça: {{infoValue['raca'].join(', ') }}</p>
-      <p style="color: black;">  raça: {{infoValue['racagos'].join(', ') }}</p>
-      <p style="color: black;">  enfermetat: {{infoValue['enfermetat'].join(', ') }}</p>
-      <p style="color: black;">  tamany: {{infoValue['tamany'].join(', ') }}</p>
-      <p style="color: black;">  edat: {{infoValue['edat'].join(', ') }}</p>
+      <p>SELECCIONAT:</p>
+      <p>Animal: {{ infoValue['animal'].join(', ') }}</p>
+      <p>Pelatge: {{ infoValue['pelatge'].join(', ') }}</p>
+      <p>Color: {{ infoValue['color'].join(', ') }}</p>
+      <p>Raca: {{ infoValue['raca'].join(', ') }}</p>
+      <p>Enfermetat: {{ infoValue['enfermetat'].join(', ') }}</p>
+      <p>Tamany: {{ infoValue['tamany'].join(', ') }}</p>
+      <p>Edat: {{ infoValue['edat'].join(', ') }}</p>
+
+
+      <button class="buttonSel" (click) = "filtrar()" style="background-color: white"> FILTRAR </button>
     </div>
   </div>
 </div>

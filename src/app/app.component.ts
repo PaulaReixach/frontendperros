@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() { //Para el inicio de la app, hay un search de 'apple' y probar si hay conex, cambiar a lo q queramos
     this.checkConnection();
-    this.search('Toby');
+    this.search('Apple');
   }
 
   checkConnection() { //Comprobacion de k hay conexión
@@ -45,4 +45,17 @@ export class AppComponent implements OnInit {
       }
     );
   }
+
+  searchButton(animals: string[][]) {
+    this.elasticsearchService.searchButton(animals).subscribe(
+      (data: any) => {
+        this.searchData = data;
+        console.log('Data from Elasticsearch:', this.searchData);
+      },
+      (error) => {
+        console.error('Error searching in Elasticsearch:', error);
+      }
+    );
+  }
+
 }
